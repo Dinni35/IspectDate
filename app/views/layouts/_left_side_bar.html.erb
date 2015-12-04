@@ -1,0 +1,38 @@
+<aside class="main-sidebar">
+  <section class="sidebar">
+    <ul class="sidebar-menu">
+      <%# if current_user.is_system_admin? || current_user.is_bank_admin? %>
+         <li>
+          <%= link_to banks_path do %>
+            <i class="fa fa-users"></i>
+            <span>Banking</span>
+          <% end %>
+        </li>
+      <%# end %>
+      <%# if current_user.is_system_admin? || current_user.is_bank_admin? || current_user.is_banking_professional? %>
+        <li>
+          <%= link_to banking_users_path do %>
+            <i class="fa fa-users"></i>
+            <span>Banking Professionals</span>
+          <% end %>
+        </li>
+      <% #end %>
+      <%# if current_user.is_system_admin? || current_user.is_cic_admin? %>
+        <li>
+          <%= link_to ci_companies_path do %>
+            <i class="fa fa-building-o"></i>
+            <span>CI Company</span>
+          <% end %>
+        </li>
+      <%# end %>
+      <%# if current_user.is_system_admin? || current_user.is_cic_admin? || current_user.construction_inspector? %>
+        <li>
+          <%= link_to company_inspectors_path  do %>
+            <i class="fa fa-user"></i>
+            <span>Company Inspector</span>
+          <% end %>
+        </li>
+      <%# end %>
+    </ul>
+  </section>
+</aside>
